@@ -15,17 +15,18 @@ public class testBase {
     public static WebDriver driver;
     public testBase(){
         try{
-            FileInputStream ip = new FileInputStream("C:\\Users\\AnkitKumar\\IdeaProjects\\InfoStride\\ProjectPOM\\src\\test\\java\\config\\config.properties");
+            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\config\\config.properties");
             prop = new Properties();
             prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
 
     }
     public void initialization(){
+
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
