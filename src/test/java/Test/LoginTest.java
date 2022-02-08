@@ -11,12 +11,13 @@ import java.io.IOException;
 public class LoginTest extends testBase {
     LoginPage p;
     public LoginTest(){
+
         super();
     }
     @BeforeSuite
     public void launch(){
         initialization();
-        p = new LoginPage();
+        p = new LoginPage(driver);
     }
     @Test
     public void checkTitle(){
@@ -28,7 +29,9 @@ public class LoginTest extends testBase {
         p.login();
     }
     @Test
-    public void ForgetPass(){
+    public void ForgetPass()
+    {
+
         p.forgetpas();
     }
 
